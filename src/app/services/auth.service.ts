@@ -15,10 +15,10 @@ export class AuthService {
 
   logIn(user: User): Observable<any> {
     const headers = new HttpHeaders(user ? {
-        authorization : "Basic" + btoa(user.username + ":" + user.password)
+      authorization : "Basic " + btoa(user.username + ":" + user.password)
     } : {});
 
-    return this.http.get<any>("http://localhost:8765/api/user/api/user/service/user", {headers: headers})
+    return this.http.get<any>(API_URL + "user", {headers: headers})
       .pipe(map(response=>{
         if(response){
           localStorage.setItem("currentUser", JSON.stringify(response));
