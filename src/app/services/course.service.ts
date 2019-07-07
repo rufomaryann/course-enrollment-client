@@ -30,4 +30,14 @@ export class CourseService {
       }
     );
   }
+
+  filterStudents(courseId: string): Observable<any>{
+    return this.http.post(
+      API_URL + "students",
+      courseId,
+      {
+        headers: {"Content-Type" : "application/json; charset=UTF-8"}
+      }
+      );
+  }
 }
