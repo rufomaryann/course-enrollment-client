@@ -3,7 +3,7 @@
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
 
-        <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+        <form name="form-signin" (ngSubmit)="f.form.valid && logIn()" #f="ngForm" novalidate>
             <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
             <span id="reauth-email" class="reauth-email"></span>
 
